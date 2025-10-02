@@ -27,7 +27,8 @@
 
 {Make a list of things that you need to fix, improve, and add in the future.}
 
-- Item 1  
-- Item 2  
-- Item 3  
+- Make it so you can only guess words and not just random letters
+- if you guessed a letter in the correct spot and it only shows up in the answer word but put that letter twice in your guess it should only show the green one and the second letter should be white. ex: if the word was scone and I guess scars I want the first s to show up as green and the last one to be white instead of yellow.  
+- have it show your record for how many guesses 
+- only allow the user to type letters that have not been ruled out.
 

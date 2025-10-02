@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E64CA6AA2E8EFECC00A3AFDC /* game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CA6A92E8EFECA00A3AFDC /* game.swift */; };
+		E64CA6AC2E8EFED700A3AFDC /* wordfetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CA6AB2E8EFED300A3AFDC /* wordfetch.swift */; };
+		E6D394942E8EFCA200F792AA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D394922E8EFCA200F792AA /* main.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		E674648B2E8B565500A97271 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -19,16 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E64CA6A92E8EFECA00A3AFDC /* game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game.swift; sourceTree = "<group>"; };
+		E64CA6AB2E8EFED300A3AFDC /* wordfetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordfetch.swift; sourceTree = "<group>"; };
 		E674648D2E8B565500A97271 /* Wordle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Wordle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6D394922E8EFCA200F792AA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E6D394932E8EFCA200F792AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		E674648F2E8B565500A97271 /* Wordle */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Wordle;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E674648A2E8B565500A97271 /* Frameworks */ = {
@@ -44,7 +46,10 @@
 		E67464842E8B565500A97271 = {
 			isa = PBXGroup;
 			children = (
-				E674648F2E8B565500A97271 /* Wordle */,
+				E6D394922E8EFCA200F792AA /* main.swift */,
+				E64CA6A92E8EFECA00A3AFDC /* game.swift */,
+				E64CA6AB2E8EFED300A3AFDC /* wordfetch.swift */,
+				E6D394932E8EFCA200F792AA /* README.md */,
 				E674648E2E8B565500A97271 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,9 +77,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				E674648F2E8B565500A97271 /* Wordle */,
-			);
 			name = Wordle;
 			packageProductDependencies = (
 			);
@@ -94,6 +96,7 @@
 				TargetAttributes = {
 					E674648C2E8B565500A97271 = {
 						CreatedOnToolsVersion = 26.0.1;
+						LastSwiftMigration = 2600;
 					};
 				};
 			};
@@ -121,6 +124,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E64CA6AC2E8EFED700A3AFDC /* wordfetch.swift in Sources */,
+				E6D394942E8EFCA200F792AA /* main.swift in Sources */,
+				E64CA6AA2E8EFECC00A3AFDC /* game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,9 +254,11 @@
 		E67464952E8B565500A97271 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -259,6 +267,7 @@
 		E67464962E8B565500A97271 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
