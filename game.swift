@@ -12,7 +12,7 @@ func runGame(answer: String) {
 
     for attempt in 1...maxAttempts {
         print("Attempt \(attempt): ", terminator: "")
-        guard let guess = readLine()?.uppercased(), guess.count == 5 else {
+        guard let guess = readLine()?.uppercased(), guess.count == 5 else { //only allow 5 guesses
             print("Invalid guess. Enter a 5-letter word.")
             continue
         }
@@ -24,7 +24,7 @@ func runGame(answer: String) {
         }
         
         var result = ""
-        for (gChar, aChar) in zip(guess, answer) {
+        for (gChar, aChar) in zip(guess, answer) { //break down words and compare letters in the guess word and answer word
             if gChar == aChar {
                 result.append("✅")
             } else if answer.contains(gChar) {

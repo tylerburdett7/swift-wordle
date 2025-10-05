@@ -14,21 +14,16 @@
 
 {Used Xcode to create a console wordle app just to make sure the logic made sense and I could have a solid understanding of the language before I turn it into an ios app.}
 
-{Describe the programming language that you used and any frameworks/libraries.}
+{Made entirely in swift with the use of a random word api}
 
 # Useful Websites
-
-{Make a list of websites that you found helpful in this project}
 
 - [Mimo](https://mimo.org/)
 - [Hacking with swift](https://www.hackingwithswift.com/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-
 - Make it so you can only guess words and not just random letters
 - if you guessed a letter in the correct spot and it only shows up in the answer word but put that letter twice in your guess it should only show the green one and the second letter should be white. ex: if the word was scone and I guess scars I want the first s to show up as green and the last one to be white instead of yellow.  
 - have it show your record for how many guesses 
 - only allow the user to type letters that have not been ruled out.
-
