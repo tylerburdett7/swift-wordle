@@ -6,9 +6,8 @@
 
 {The purpose of this software is to set the foundation for the logic behind the wordle app I am hoping to make. My goal is to learn swift and create a usable app that tends to ones wordle needs :) }
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/cRDcg7yzzd8)
 
 # Development Environment
 
