@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		E6B923B92EA4B09400ADA860 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 		E6ECABF02EA01A540081246C /* WordleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +33,7 @@
 		E6ECABE72EA01A540081246C = {
 			isa = PBXGroup;
 			children = (
+				E6B923B92EA4B09400ADA860 /* README.md */,
 				E6ECABF22EA01A540081246C /* WordleApp */,
 				E6ECABF12EA01A540081246C /* Products */,
 			);

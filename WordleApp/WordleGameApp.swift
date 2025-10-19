@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct WordleAppApp: App {
+struct WordleGameApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
