@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E6406C4E2EB6B0990012EC40 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = E6406C4D2EB6B0990012EC40 /* Auth */; };
+		E6406C502EB6B0990012EC40 /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = E6406C4F2EB6B0990012EC40 /* Functions */; };
+		E6406C522EB6B0990012EC40 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = E6406C512EB6B0990012EC40 /* PostgREST */; };
+		E6406C582EB6B3E60012EC40 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = E6406C572EB6B3E60012EC40 /* Supabase */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E6B923B92EA4B09400ADA860 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 		E6ECABF02EA01A540081246C /* WordleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,17 +31,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6406C582EB6B3E60012EC40 /* Supabase in Frameworks */,
+				E6406C522EB6B0990012EC40 /* PostgREST in Frameworks */,
+				E6406C502EB6B0990012EC40 /* Functions in Frameworks */,
+				E6406C4E2EB6B0990012EC40 /* Auth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6406C562EB6B3E60012EC40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6ECABE72EA01A540081246C = {
 			isa = PBXGroup;
 			children = (
 				E6B923B92EA4B09400ADA860 /* README.md */,
 				E6ECABF22EA01A540081246C /* WordleApp */,
+				E6406C562EB6B3E60012EC40 /* Frameworks */,
 				E6ECABF12EA01A540081246C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +86,10 @@
 			);
 			name = WordleApp;
 			packageProductDependencies = (
+				E6406C4D2EB6B0990012EC40 /* Auth */,
+				E6406C4F2EB6B0990012EC40 /* Functions */,
+				E6406C512EB6B0990012EC40 /* PostgREST */,
+				E6406C572EB6B3E60012EC40 /* Supabase */,
 			);
 			productName = WordleApp;
 			productReference = E6ECABF02EA01A540081246C /* WordleApp.app */;
@@ -96,6 +119,9 @@
 			);
 			mainGroup = E6ECABE72EA01A540081246C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E6406C4C2EB6B0990012EC40 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E6ECABF12EA01A540081246C /* Products */;
 			projectDirPath = "";
@@ -330,6 +356,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E6406C4C2EB6B0990012EC40 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E6406C4D2EB6B0990012EC40 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6406C4C2EB6B0990012EC40 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		E6406C4F2EB6B0990012EC40 /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6406C4C2EB6B0990012EC40 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		E6406C512EB6B0990012EC40 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6406C4C2EB6B0990012EC40 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		E6406C572EB6B3E60012EC40 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6406C4C2EB6B0990012EC40 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6ECABE82EA01A540081246C /* Project object */;
 }

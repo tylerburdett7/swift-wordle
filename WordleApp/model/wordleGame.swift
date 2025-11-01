@@ -1,5 +1,5 @@
 //
-//  wordleGame.swift
+//  WordleGame.swift
 //  WordleApp
 //
 //  Created by Tyler Burdett on 10/15/25.
@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import Supabase
 
 enum LetterResult {
     case correct, present, absent, unknown
@@ -74,9 +75,15 @@ class WordleGame: ObservableObject {
             isGameOver = true
             didWin = true
             message = "✅ You guessed it!"
+            Task {
+                await recordGameResult(didWin: true)
+            }
         } else if guesses.count == maxAttempts {
             isGameOver = true
             message = "❌ Out of tries! The word was \(secretWord)."
+            Task {
+                await recordGameResult(didWin: false)
+            }
         }
     }
 
@@ -122,4 +129,37 @@ class WordleGame: ObservableObject {
         keyboardState.removeAll()
         fetchRandomWord()
     }
+
+    // 🟢 Record the game result to Supabase
+    func recordGameResult(didWin: Bool) async {
+        struct GameRecord: Encodable {
+            let player_name: String
+            let did_win: Bool
+            let word: String
+            let attempts: Int
+            let timestamp: String
+        }
+
+        do {
+            let client = SupabaseManager.shared.client
+
+            let record = GameRecord(
+                player_name: "Test Player",
+                did_win: didWin,
+                word: secretWord,
+                attempts: guesses.count,
+                timestamp: ISO8601DateFormatter().string(from: Date())
+            )
+
+            _ = try await client
+                .from("games")
+                .insert(record)
+                .execute()
+
+            print("✅ Game result recorded in Supabase")
+        } catch {
+            print("❌ Failed to record game result:", error.localizedDescription)
+        }
+    }
+
 }

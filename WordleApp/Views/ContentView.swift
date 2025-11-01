@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Supabase
 
 struct ContentView: View {
     @StateObject var game = WordleGame()
@@ -17,6 +18,7 @@ struct ContentView: View {
                 .bold()
                 .padding(.top)
 
+            // Display previous guesses
             ForEach(game.guesses, id: \.self) { row in
                 HStack {
                     ForEach(row) { tile in
@@ -29,6 +31,7 @@ struct ContentView: View {
                 }
             }
 
+            // Display current guess row
             HStack {
                 ForEach(Array(game.currentGuess), id: \.self) { char in
                     Text(String(char))
@@ -38,20 +41,30 @@ struct ContentView: View {
                 }
             }
 
+            // Display message
             if let msg = game.message {
                 Text(msg)
                     .padding()
             }
 
+            // Keyboard
             KeyboardView(game: game)
 
+            // Reset button
             Button("Reset Game") {
                 game.resetGame()
             }
             .padding()
         }
+        // ✅ This runs once when the app starts
+        .onAppear {
+            Task {
+                await SupabaseManager.shared.addTestPlayer()
+            }
+        }
     }
 
+    // MARK: - Helper function for tile colors
     func color(for result: LetterResult) -> Color {
         switch result {
         case .correct: return .green
