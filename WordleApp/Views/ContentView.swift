@@ -1,15 +1,12 @@
-//
-//  ContentView.swift
-//  WordleApp
-//
-//  Created by Tyler Burdett on 10/15/25.
-//
-
 import SwiftUI
 import Supabase
 
 struct ContentView: View {
+    
     @StateObject var game = WordleGame()
+    @StateObject var gameCenter = GameCenterManager.shared
+    
+    @State private var showLeaderboard = false
 
     var body: some View {
         VStack {
@@ -55,16 +52,23 @@ struct ContentView: View {
                 game.resetGame()
             }
             .padding()
+
+            Button("Leaderboard") {
+                showLeaderboard = true
+            }
+            .padding(.bottom)
         }
-        // ✅ This runs once when the app starts
         .onAppear {
+            gameCenter.authenticate()
             Task {
                 await SupabaseManager.shared.addTestPlayer()
             }
         }
+        .sheet(isPresented: $showLeaderboard) {
+            LeaderboardView()
+        }
     }
 
-    // MARK: - Helper function for tile colors
     func color(for result: LetterResult) -> Color {
         switch result {
         case .correct: return .green

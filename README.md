@@ -13,7 +13,7 @@ The ultimate goal is to expand this project into a more complete game that inclu
 
 My main purpose in building this project was to gain experience with **mobile app development** and become more comfortable using **Swift** and **SwiftUI**, which I’m interested in pursuing further.
 
-🎥 **Demo Video:** [Watch on YouTube](https://youtu.be/xIVRhjClQaU)
+🎥 **Demo Video:** [Watch on YouTube](https://youtu.be/-dwZzi_5zM0)
 
 ---
 
