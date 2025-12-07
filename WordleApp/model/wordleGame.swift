@@ -75,16 +75,32 @@ class WordleGame: ObservableObject {
             isGameOver = true
             didWin = true
             message = "✅ You guessed it!"
+
             Task {
                 await recordGameResult(didWin: true)
+                await SupabaseManager.shared.updateStats(
+                    playerName: "Test Player",
+                    won: true,
+                    guesses: guesses.count
+                )
             }
+
+
         } else if guesses.count == maxAttempts {
             isGameOver = true
             message = "❌ Out of tries! The word was \(secretWord)."
+
             Task {
                 await recordGameResult(didWin: false)
+                await SupabaseManager.shared.updateStats(
+                    playerName: "Test Player",
+                    won: false,
+                    guesses: guesses.count
+                )
             }
+
         }
+
     }
 
     func evaluate(guess: String) -> [LetterTile] {

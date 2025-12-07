@@ -9,63 +9,69 @@ struct ContentView: View {
     @State private var showLeaderboard = false
 
     var body: some View {
-        VStack {
-            Text("Wordle")
-                .font(.largeTitle)
-                .bold()
-                .padding(.top)
+        NavigationStack {
+            VStack {
+                Text("Wordle")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.top)
 
-            // Display previous guesses
-            ForEach(game.guesses, id: \.self) { row in
-                HStack {
-                    ForEach(row) { tile in
-                        Text(String(tile.letter))
-                            .frame(width: 40, height: 40)
-                            .background(color(for: tile.result))
-                            .cornerRadius(6)
-                            .foregroundColor(.white)
+                // Display previous guesses
+                ForEach(game.guesses, id: \.self) { row in
+                    HStack {
+                        ForEach(row) { tile in
+                            Text(String(tile.letter))
+                                .frame(width: 40, height: 40)
+                                .background(color(for: tile.result))
+                                .cornerRadius(6)
+                                .foregroundColor(.white)
+                        }
                     }
                 }
-            }
 
-            // Display current guess row
-            HStack {
-                ForEach(Array(game.currentGuess), id: \.self) { char in
-                    Text(String(char))
-                        .frame(width: 40, height: 40)
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(6)
+                // Display current guess row
+                HStack {
+                    ForEach(Array(game.currentGuess), id: \.self) { char in
+                        Text(String(char))
+                            .frame(width: 40, height: 40)
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(6)
+                    }
                 }
-            }
 
-            // Display message
-            if let msg = game.message {
-                Text(msg)
-                    .padding()
-            }
+                // Display message
+                if let msg = game.message {
+                    Text(msg)
+                        .padding()
+                }
 
-            // Keyboard
-            KeyboardView(game: game)
+                // Keyboard
+                KeyboardView(game: game)
 
-            // Reset button
-            Button("Reset Game") {
-                game.resetGame()
-            }
-            .padding()
+                // Reset button
+                Button("Reset Game") {
+                    game.resetGame()
+                }
+                .padding(.top)
 
-            Button("Leaderboard") {
-                showLeaderboard = true
+                // Stats button
+                NavigationLink("View Stats") {
+                    StatsView()
+                }
+                .padding(.top)
+
+                // Existing Leaderboard Button
+                Button("Leaderboard") {
+                    showLeaderboard = true
+                }
+                .padding(.top)
             }
-            .padding(.bottom)
-        }
-        .onAppear {
-            gameCenter.authenticate()
-            Task {
-                await SupabaseManager.shared.addTestPlayer()
+            .onAppear {
+                gameCenter.authenticate()
             }
-        }
-        .sheet(isPresented: $showLeaderboard) {
-            LeaderboardView()
+            .sheet(isPresented: $showLeaderboard) {
+                LeaderboardView()
+            }
         }
     }
 

@@ -13,7 +13,7 @@ The ultimate goal is to expand this project into a more complete game that inclu
 
 My main purpose in building this project was to gain experience with **mobile app development** and become more comfortable using **Swift** and **SwiftUI**, which I’m interested in pursuing further.
 
-🎥 **Demo Video:** [Watch on YouTube](https://youtu.be/-dwZzi_5zM0)
+🎥 **Demo Video:** [Watch on YouTube](https://youtu.be/7OShd3OgUwY)
 
 ---
 
@@ -42,7 +42,6 @@ Here are some planned improvements and features I’d like to add:
 - Add a **Word of the Day** mode and main menu
 - Implement player **statistics and streak tracking**
 - Add animations and visual polish for a smoother user experience
-- Create a leaderboard for multiple players
 
 ---
 
